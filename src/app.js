@@ -1,7 +1,8 @@
 import React from 'react';
-import { Icon, IconButton, Button, Card, CardActions, CardMedia , CardMenu, CardTitle, CardText , Layout, Drawer, Header, Navigation, HeaderRow, Content } from 'react-mdl';
+import { Textfield, Icon, IconButton, Button, Card, CardActions, CardMedia , CardMenu, CardTitle, CardText , Layout, Drawer, Header, Navigation, HeaderRow, Content } from 'react-mdl';
 import { Link, hashHistory } from 'react-router'
-
+import {SelectField, Option} from 'react-mdl-extra'
+{/* https://github.com/HriBB/react-mdl-extra  */}
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -14,27 +15,39 @@ class App extends React.Component {
     return (
       <div>
         <Layout fixedHeader>
-          <Header title="UndocUHelp">
-            <Navigation>
-                <a href="">USA
-                </a>
-                <a href="">Russia</a>
-                <a href="">Germany</a>
-                <a href="">Sweden</a>
-            </Navigation> 
+          <Header waterfall style = {{color: '#fff'}}>
+              <HeaderRow title="UndocUHelp">
+              <Navigation className="sections" style={{paddingRight: '325px'}} >
+                      <a href="#">HOME</a>
+                      <a href="#">RESOURCES</a>
+                      <a href="#">NEWS</a>
+                      <a href="#">BLOG</a>
+                      <a href="#">ABOUT US</a>
+                      <a href="#">ORGANIZATION LOGIN</a>
+                  </Navigation>
+              <SelectField label={'English'} value={1}>
+                <Option value={1}>English</Option>
+                <Option value={2}>Español</Option>
+                <Option value={3}>Français</Option>
+                <Option value={4}>Deutsch</Option>
+                <Option value={5}>Português</Option>
+              </SelectField>
+              </HeaderRow>
+              
           </Header>
-          <Drawer title="Menu">
-            <Navigation>
-                <a href="">friends</a>
-                <a href="">bingus</a>
-                <a href="">bungus</a>
-                <Link to="/about" activeClassName="active">About Us</Link>
-            </Navigation>
-          </Drawer> 
+          <Drawer title="Title">
+              <Navigation>
+                  <a href="#">Link</a>
+                  <a href="#">Link</a>
+                  <a href="#">Link</a>
+                  <a href="#">Link</a>
+              </Navigation>
+          </Drawer>
+
           <Content>
             <div className="page-content">
-            <Card shadow={0} style={{width: '512px', margin: 'auto'}}>
-                <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://www.getmdl.io/assets/demos/welcome_card.jpg) center / cover'}}>Welcome</CardTitle>
+            <Card shadow={0} style={{width: '1435px', margin: 'auto', paddingTop: '10px'}}>
+                <CardTitle style={{color: '#fff', height: '500px', background: 'url(http://www.getmdl.io/assets/demos/welcome_card.jpg) center / cover'}}>Welcome</CardTitle>
                 <CardText>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Mauris sagittis pellentesque lacus eleifend lacinia...
