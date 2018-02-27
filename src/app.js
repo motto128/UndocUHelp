@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Drawer, Header, Navigation } from 'react-mdl';
+import { Icon, IconButton, Button, Card, CardActions, CardMedia , CardMenu, CardTitle, CardText , Layout, Drawer, Header, Navigation, HeaderRow, Content } from 'react-mdl';
 import { Link, hashHistory } from 'react-router'
 
 class App extends React.Component {
@@ -14,7 +14,7 @@ class App extends React.Component {
     return (
       <div>
         <Layout fixedHeader>
-          <Header title="Sheeple">
+          <Header title="UndocUHelp">
             <Navigation>
                 <a href="">USA
                 </a>
@@ -31,14 +31,32 @@ class App extends React.Component {
                 <Link to="/about" activeClassName="active">About Us</Link>
             </Navigation>
           </Drawer> 
+          <Content>
+            <div className="page-content">
+            <Card shadow={0} style={{width: '512px', margin: 'auto'}}>
+                <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://www.getmdl.io/assets/demos/welcome_card.jpg) center / cover'}}>Welcome</CardTitle>
+                <CardText>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mauris sagittis pellentesque lacus eleifend lacinia...
+                </CardText>
+                <CardActions border>
+                    <Button colored>Get Started</Button>
+                </CardActions>
+                <CardMenu style={{color: '#fff'}}>
+                    <IconButton name="share" />
+                </CardMenu>
+            </Card>
+            </div>
 
+
+          </Content>
           
-
           {this.props.children}     
         
         </Layout>
 
-      </div>   
+      </div>  
+       
     )
   }
 }
