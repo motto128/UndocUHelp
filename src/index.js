@@ -10,6 +10,7 @@ import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 
 import './index.css';
+import Events from './events';
 
 
 //render the Application view
@@ -18,7 +19,8 @@ ReactDOM.render(
     <Route path="/" component={App}>
       {/*<IndexRoute component={Navbar}/>*/}
       <Route path="/about" component={AboutUs} />
-      <Route path="/resources" component={Resources} />   
+      <Route path="/resources" component={Resources} />
+      <Route path="/events" component={Events} />     
     </Route>
   </Router>
   

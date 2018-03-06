@@ -8,3 +8,9 @@
 #sections{
     color: blue
 }
+
+#center {
+    margin: auto;
+    width: 25%;
+    padding: 10px;
+}
