@@ -1,0 +1,371 @@
+[ 
+    {
+        "Name": "Leadership Without Borders",
+        "Descr": "Leadership Without Borders (LWB) was created with Undocumented Students in mind and with the mission to serve as a launch pad for students’ leadership, a space for community building, and a connection point for awareness as well as to resources and services for undocumented students.The program offers leadership development resources, meeting space, artwork, a textbook lending library, and an atmosphere designed to provide both aspiration and inspirational aspects for multi-ethnic, multi-identity, and multi-national communities.We invite you to learn more about the history, services, and stories that embody Leadership Without Borders.",
+        "Tags": ["Undocumented Student Help", "Scholarship Help", "Financial Aid Help", "Social Space"],
+        "Id": 1,
+        "College": "University of Washington",
+        "Link": "http://depts.washington.edu/ecc/lwb/",
+        "Contact": 
+        {
+            "Contact_Name": null,
+            "Phone_Number": "2066856301",
+            "Fax": "2066161041",
+            "Email": "undocu@uw.edu"
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "3931 Brooklyn Avenue NE Box 355650 Seattle, Washington 98105",
+            "City": "Seattle",
+            "State": "WA",
+            "Zip_Code": "98105"
+        },
+        "Hours" :
+        {
+            "Weekdays": "9:00 AM to 6:00 PM",
+            "Saturdays": "10:00 AM to 6:00 PM",
+            "Sundays": null,
+            "Holidays": null
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "Spring Quarter 2018 Undocu Ally Training",
+                "Event_Descr": "The Leadership Withou",
+                "Event_Date": "04/13/18",
+                "Event_Time": "9:30 am - 3:30 pm",
+                "Event_Location": "Samuel E. Kelly Ethnic Cultural Center - Unity Suite",
+                "Event_Link": "https://docs.google.com/forms/d/e/1FAIpQLSeskYQB_NUA_buV8RfxjNK-fioKIoppfP31GKd32K05wBzJmA/viewform?c=0&w=1"
+            }
+        ]
+
+    },
+
+    {
+        "Name": "Collectiva Legal Burien",
+        "Descr": "Colectiva Legal del Pueblo is a non-hierarchal collective organization founded for and by undocumented immigrants working to build community leadership and power for migrant justice through legal advocacy and education.",
+        "Tags": ["Undocumented Immigrant Help", "Legal Advocacy"],
+        "Id": 2,
+        "College": "None",
+        "Link": "https://colectivalegal.org/",
+        "Contact": 
+        {
+            "Contact_Name": "Burien Office",
+            "Phone_Number": "2069311514",
+            "Fax": "2067308084",
+            "Email": "info@colectivalegal.org"
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "201 SW 153rd St.", 
+            "City": "Burien",
+            "State": "WA",
+            "Zip_Code": "98166"
+        },
+        "Hours" :
+        {
+            "Weekdays": "10am - 5pm",
+            "Saturdays": "",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "",
+                "Event_Descr": "",
+                "Event_Date": "",
+                "Event_Time": "",
+                "Event_Location": "",
+                "Event_Link": ""
+            }
+        ]
+
+    },
+
+    {
+        "Name": "Collectiva Legal Wenatchee",
+        "Descr": "Colectiva Legal del Pueblo is a non-hierarchal collective organization founded for and by undocumented immigrants working to build community leadership and power for migrant justice through legal advocacy and education.",
+        "Tags": ["Undocumented Immigrant Help", "Legal Advocacy"],
+        "Id": 3,
+        "College": "None",
+        "Link": "https://colectivalegal.org/",
+        "Contact": 
+        {
+            "Contact_Name": "Wenatchee Office",
+            "Phone_Number": "5092936314",
+            "Fax": "",
+            "Email": "info@colectivalegal.org" 
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "113 Second St. #5", 
+            "City": "Wenatchee",
+            "State": "WA",
+            "Zip_Code": "98801"
+        },
+        "Hours" :
+        {
+            "Weekdays": "10am - 5pm",
+            "Saturdays": "",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "",
+                "Event_Descr": "",
+                "Event_Date": "",
+                "Event_Time": "",
+                "Event_Location": "",
+                "Event_Link": ""
+            }
+        ]
+
+    },
+
+    {
+        "Name": "Casa Latina",
+        "Descr": "Our Mission is to advance the power and well-being of Latino immigrants through employment, education, and community organizing.",
+        "Tags": ["Latino Help", "Employment", "Education", "Community Organizing"],
+        "Id": 4,
+        "College": "None",
+        "Link": "http://casa-latina.org/",
+        "Contact": 
+        {
+            "Contact_Name": "Sierra Golden",
+            "Phone_Number": "2069560779",
+            "Fax": "",
+            "Email": ""
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "317 17th Ave S", 
+            "City": "Seattle",
+            "State": "WA",
+            "Zip_Code": "98144"
+        },
+        "Hours" :
+        {
+            "Weekdays": "7am - 1030am",
+            "Saturdays": "7am-1130am",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "",
+                "Event_Descr": "",
+                "Event_Date": "",
+                "Event_Time": "",
+                "Event_Location": "",
+                "Event_Link": ""
+            }
+        ]
+
+    },
+
+    {
+        "Name": "Latino/a Educational Achievement Project (LEAP)",
+        "Descr": "The Latino/a Educational Achievement Project, or LEAP, is a program of Sea Mar Community Health Centers. LEAP works with community leaders in the movement for justice and equity through civic engagement programming, increased educational opportunities, advocacy, and community initiatives.",
+        "Tags": ["Latino Help", "Employment", "Education", "Community Organizing"],
+        "Id": 5,
+        "College": "None",
+        "Link": "http://www.leapwa.org/",
+        "Contact": 
+        {
+            "Contact_Name": "LEAP",
+            "Phone_Number": "2069651057",
+            "Fax":"",
+            "Email": "LEAP@seamarchc.org"
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "113 23rd Ave S. ", 
+            "City": "Seattle",
+            "State": "WA",
+            "Zip_Code": "98144"
+        },
+        "Hours" :
+        {
+            "Weekdays": "7am - 1030am",
+            "Saturdays": "7am-1130am",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "LEAP Gala" ,
+                "Event_Descr": "Formal Dance",
+                "Event_Date": "November 9, 2017",
+                "Event_Time": "10PM",
+                "Event_Location": "UW Intellectual House",
+                "Event_Link": "https://seamar.ejoinme.org/LoginPage/tabid/278144/Default.aspx?returnurl=%2fLEAPGALA" 
+            }
+        ]
+
+    },
+
+    {
+        "Name": "Northwest Immigrant Rights Project",
+        "Descr":"Northwest Immigrant Rights Project promotes justice by defending and advancing the rights of immigrants through direct legal services, systemic advocacy, and community education.",
+        "Tags": ["Immigrant Rights"],
+        "Id": 6,
+        "College": "None",
+        "Link": "https://www.nwirp.org/",
+        "Contact": 
+        {
+            "Contact_Name": "Northwest Immigrant Rights Project",
+            "Phone_Number": "2065874009",
+            "Fax":"",
+            "Email": "LEAP@seamarchc.org"
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "615 2nd Avenue Suite 400", 
+            "City": "Seattle",
+            "State": "WA",
+            "Zip_Code": "98104"
+        },
+        "Hours" :
+        {
+            "Weekdays": "930am - 4pm",
+            "Saturdays": "",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "Annual Gala" ,
+                "Event_Descr": "Formal Dance",
+                "Event_Date": "May 18, 2018",
+                "Event_Time": "10PM",
+                "Event_Location": "Westin Seattle",
+                "Event_Link": "https://www.nwirp.org/sponsorship-opportunities/" 
+            }
+        ]
+
+    },
+
+    {
+        "Name": "Latino Community Fund Seattle",
+        "Descr":"The Latino Community Fund cultivates new leaders, supports cultural and community based non-profit organizations, and improves the quality of life for all Washingtonians. To achieve its mission and address the needs of Latinos, LCF programs create a vibrant community through civic engagement, healthy families, arts and culture. ",
+        "Tags": ["Leadership"],
+        "Id": 7,
+        "College": "None",
+        "Link": "https://www.latinocommunityfund.org",
+        "Contact": 
+        {
+            "Contact_Name": "Latino Community Fund Seattle Office",
+            "Phone_Number": "2063541487",
+            "Fax":"",
+            "Email": "info@latinocommunityfund.org"
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "600 1st Ave", 
+            "City": "Seattle",
+            "State": "WA",
+            "Zip_Code": "98104"
+        },
+        "Hours" :
+        {
+            "Weekdays": "",
+            "Saturdays": "",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "LCF 11th Anniversary Gala" ,
+                "Event_Descr": "Attendees will enjoy the following as part of their ticket purchase: Live music, Plated three course dinner, Stunning views of the Seattle waterfront, Inspirational speakers",
+                "Event_Date": "September 9, 2018",
+                "Event_Time": "6PM",
+                "Event_Location": "Four Seasons Downtown Seattle",
+                "Event_Link": "https://www.latinocommunityfund.org/gala" 
+            }
+        ]
+
+    } , 
+
+    {
+        "Name": "Latino Community Fund Yakima",
+        "Descr":"The Latino Community Fund cultivates new leaders, supports cultural and community based non-profit organizations, and improves the quality of life for all Washingtonians. To achieve its mission and address the needs of Latinos, LCF programs create a vibrant community through civic engagement, healthy families, arts and culture. ",
+        "Tags": ["Leadership"],
+        "Id": 8,
+        "College": "None",
+        "Link": "https://www.latinocommunityfund.org",
+        "Contact": 
+        {
+            "Contact_Name": "Latino Community Fund Yakima Office",
+            "Phone_Number": "5099021750",
+            "Fax":"",
+            "Email": "micaela@latinocommunityfund.org"
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "6 S 2nd St., STE 907", 
+            "City": "Yakima",
+            "State": "WA",
+            "Zip_Code": "98901"
+        },
+        "Hours" :
+        {
+            "Weekdays": "",
+            "Saturdays": "",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "" ,
+                "Event_Descr": "",
+                "Event_Date": "",
+                "Event_Time": "",
+                "Event_Location": "",
+                "Event_Link": "" 
+            }
+        ]
+
+    }, 
+
+    {
+        "Name": "21 Progress",
+        "Descr":"21 Progress provides high quality leadership development training/education programs that unite, develop, and empower emerging leaders – including young adults,  immigrants, refugees, and people of color – to build thriving communities. We are committed to investing in leaders as whole people and delivering services that address communities most impacted.",
+        "Tags": ["Leadership"],
+        "Id": 9,
+        "College": "None",
+        "Link": "https://21progress.org",
+        "Contact": 
+        {
+            "Contact_Name": "21 Progress Seattle Office",
+            "Phone_Number": "2068298382",
+            "Fax": "2068298858",
+            "Email": ""
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "409 Maynard Ave S Suite 202", 
+            "City": "Seattle",
+            "State": "WA",
+            "Zip_Code": "98104"
+        },
+        "Hours" :
+        {
+            "Weekdays": "9am - 5pm",
+            "Saturdays": "",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "Volunteer Orientation" ,
+                "Event_Descr": "Learn about 21 Progress and our volunteer opportunities",
+                "Event_Date": "April 3, 2018",
+                "Event_Time": "5:30pm - 7:30pm",
+                "Event_Location": "",
+                "Event_Link": "" 
+            }
+        ]
+
+    }
+
+]

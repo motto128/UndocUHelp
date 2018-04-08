@@ -2,6 +2,7 @@ import React from 'react';
 import { Textfield, Icon, IconButton, Button, Card, CardActions, CardMedia , CardMenu, CardTitle, CardText , Layout, Drawer, Header, Navigation, HeaderRow, Content } from 'react-mdl';
 import { Link, hashHistory } from 'react-router'
 import {SelectField, Option} from 'react-mdl-extra'
+
 {/* https://github.com/HriBB/react-mdl-extra  */}
 class App extends React.Component {
   constructor(props){
@@ -20,7 +21,7 @@ class App extends React.Component {
               <Navigation className="sections" style={{paddingRight: '325px'}} >
                       <a href="#">HOME</a>
                       <a href="#/resources">RESOURCES</a>
-                      <a href="#">NEWS</a>
+                      <a href="#/events">EVENTS</a>
                       <a href="#">BLOG</a>
                       <a href="#/about">ABOUT US</a>
                       <a href="#">ORGANIZATION LOGIN</a>
