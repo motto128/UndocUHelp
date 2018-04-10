@@ -57,7 +57,7 @@
         "Address" : 
         {
             "Street_Address": "201 SW 153rd St.", 
-            "City": "Burrien",
+            "City": "Burien",
             "State": "WA",
             "Zip_Code": "98166"
         },
@@ -164,7 +164,7 @@
     },
 
     {
-        "Name": "LEAP",
+        "Name": "Latino/a Educational Achievement Project (LEAP)",
         "Descr": "The Latino/a Educational Achievement Project, or LEAP, is a program of Sea Mar Community Health Centers. LEAP works with community leaders in the movement for justice and equity through civic engagement programming, increased educational opportunities, advocacy, and community initiatives.",
         "Tags": ["Latino Help", "Employment", "Education", "Community Organizing"],
         "Id": 5,
@@ -243,5 +243,129 @@
             }
         ]
 
+    },
+
+    {
+        "Name": "Latino Community Fund Seattle",
+        "Descr":"The Latino Community Fund cultivates new leaders, supports cultural and community based non-profit organizations, and improves the quality of life for all Washingtonians. To achieve its mission and address the needs of Latinos, LCF programs create a vibrant community through civic engagement, healthy families, arts and culture. ",
+        "Tags": ["Leadership"],
+        "Id": 7,
+        "College": "None",
+        "Link": "https://www.latinocommunityfund.org",
+        "Contact": 
+        {
+            "Contact_Name": "Latino Community Fund Seattle Office",
+            "Phone_Number": "2063541487",
+            "Fax":"",
+            "Email": "info@latinocommunityfund.org"
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "600 1st Ave", 
+            "City": "Seattle",
+            "State": "WA",
+            "Zip_Code": "98104"
+        },
+        "Hours" :
+        {
+            "Weekdays": "",
+            "Saturdays": "",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "LCF 11th Anniversary Gala" ,
+                "Event_Descr": "Attendees will enjoy the following as part of their ticket purchase: Live music, Plated three course dinner, Stunning views of the Seattle waterfront, Inspirational speakers",
+                "Event_Date": "September 9, 2018",
+                "Event_Time": "6PM",
+                "Event_Location": "Four Seasons Downtown Seattle",
+                "Event_Link": "https://www.latinocommunityfund.org/gala" 
+            }
+        ]
+
+    } , 
+
+    {
+        "Name": "Latino Community Fund Yakima",
+        "Descr":"The Latino Community Fund cultivates new leaders, supports cultural and community based non-profit organizations, and improves the quality of life for all Washingtonians. To achieve its mission and address the needs of Latinos, LCF programs create a vibrant community through civic engagement, healthy families, arts and culture. ",
+        "Tags": ["Leadership"],
+        "Id": 8,
+        "College": "None",
+        "Link": "https://www.latinocommunityfund.org",
+        "Contact": 
+        {
+            "Contact_Name": "Latino Community Fund Yakima Office",
+            "Phone_Number": "5099021750",
+            "Fax":"",
+            "Email": "micaela@latinocommunityfund.org"
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "6 S 2nd St., STE 907", 
+            "City": "Yakima",
+            "State": "WA",
+            "Zip_Code": "98901"
+        },
+        "Hours" :
+        {
+            "Weekdays": "",
+            "Saturdays": "",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "" ,
+                "Event_Descr": "",
+                "Event_Date": "",
+                "Event_Time": "",
+                "Event_Location": "",
+                "Event_Link": "" 
+            }
+        ]
+
+    }, 
+
+    {
+        "Name": "21 Progress",
+        "Descr":"21 Progress provides high quality leadership development training/education programs that unite, develop, and empower emerging leaders – including young adults,  immigrants, refugees, and people of color – to build thriving communities. We are committed to investing in leaders as whole people and delivering services that address communities most impacted.",
+        "Tags": ["Leadership"],
+        "Id": 9,
+        "College": "None",
+        "Link": "https://21progress.org",
+        "Contact": 
+        {
+            "Contact_Name": "21 Progress Seattle Office",
+            "Phone_Number": "2068298382",
+            "Fax": "2068298858",
+            "Email": ""
+        }, 
+        "Address" : 
+        {
+            "Street_Address": "409 Maynard Ave S Suite 202", 
+            "City": "Seattle",
+            "State": "WA",
+            "Zip_Code": "98104"
+        },
+        "Hours" :
+        {
+            "Weekdays": "9am - 5pm",
+            "Saturdays": "",
+            "Sundays": "",
+            "Holidays": ""
+        }, 
+        "Events" : [
+            {
+                "Event_Name": "Volunteer Orientation" ,
+                "Event_Descr": "Learn about 21 Progress and our volunteer opportunities",
+                "Event_Date": "April 3, 2018",
+                "Event_Time": "5:30pm - 7:30pm",
+                "Event_Location": "",
+                "Event_Link": "" 
+            }
+        ]
+
     }
+
 ]
