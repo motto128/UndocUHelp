@@ -1,6 +1,10 @@
 import React from 'react';
 import { Card, CardActions, CardText, CardTitle, Button} from 'react-mdl';
 import {SelectField, Option, MenuItem} from 'react-mdl-extra';
+import firebase from 'firebase';
+import "firebase/firestore";
+
+// var citiesRef = db.collection("Organization"); 
 
 class Resources extends React.Component {
   render() {

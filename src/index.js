@@ -9,6 +9,7 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 //nice style bro
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
+import "firebase/firestore";
 
 import './index.css';
 import Events from './events';
@@ -17,6 +18,7 @@ import Join from './join';
 import Home from './home';
 import Channel from './channel';
 import ChannelBox from './channelbox';
+
 
 var config = {
   apiKey: "AIzaSyDo0xOtriHqNs764nkD8H7IpyI5unVk6bQ",
@@ -27,6 +29,8 @@ var config = {
   messagingSenderId: "160599012781"
 };
 firebase.initializeApp(config);
+var db = firebase.firestore();
+
 
 //render the Application view
 ReactDOM.render(
