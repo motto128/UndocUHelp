@@ -19,11 +19,12 @@ import Channel from './channel';
 import ChannelBox from './channelbox';
 
 var config = {
-  apiKey: "AIzaSyBNe5t47u1vpZR_iXqpY8IHO6ZMYhoviUY",
-  authDomain: "chat-react-2016.firebaseapp.com",
-  databaseURL: "https://chat-react-2016.firebaseio.com",
-  storageBucket: "chat-react-2016.appspot.com",
-  messagingSenderId: "258421175670"
+  apiKey: "AIzaSyDo0xOtriHqNs764nkD8H7IpyI5unVk6bQ",
+  authDomain: "undocuhelp-5cf9f.firebaseapp.com",
+  databaseURL: "https://undocuhelp-5cf9f.firebaseio.com",
+  projectId: "undocuhelp-5cf9f",
+  storageBucket: "undocuhelp-5cf9f.appspot.com",
+  messagingSenderId: "160599012781"
 };
 firebase.initializeApp(config);
 

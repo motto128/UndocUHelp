@@ -21,8 +21,6 @@ class App extends React.Component {
               <Navigation className="sections" style={{paddingRight: '325px'}} >
                       <a href="#/home">HOME</a>
                       <a href="#/resources">RESOURCES</a>
-                      <a href="#/events">EVENTS</a>
-                      <a href="#">BLOG</a>
                       <a href="#/about">ABOUT US</a>
                       <a href="#/login">ORGANIZATION LOGIN</a>
                   </Navigation>

@@ -7,9 +7,9 @@ class Resources extends React.Component {
     return (
         <div>
             
-                <h1 style={{textAlign: 'center',color: 'grey'}}>Local Resources</h1>
+                <h1 style={{textAlign: 'left',color: 'grey'}}>Local Resources</h1>
                 <div id='center'>
-                <SelectField label={''} value={1}>
+            <SelectField label={''} value={1}>
                 <Option value={1}>Washington</Option>
                 <Option value={1}>Oregon</Option>
                 <Option value={1}>California</Option>
