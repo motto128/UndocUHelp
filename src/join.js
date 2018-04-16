@@ -110,7 +110,7 @@ class Join extends React.Component {
                 console.log(userPromise);
                 return Promise.all(profilePromise, userPromise); //do both at once!
             })
-            .then(() => hashHistory.push('/portal')) 
+            .then(() => hashHistory.push('/channels')) 
             .catch((err) => console.log(err));
         }
     }

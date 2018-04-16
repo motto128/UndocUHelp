@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router'
 import { Textfield, Icon, IconButton, Button, Card, CardActions, CardMedia , CardMenu, CardTitle, CardText , Layout, Drawer, Header, Navigation, HeaderRow, Content } from 'react-mdl';
 import {SelectField, Option} from 'react-mdl-extra'
+import Navbar from './navbar';
 
 {/* https://github.com/HriBB/react-mdl-extra  */}
 class App extends React.Component {
@@ -15,7 +16,7 @@ class App extends React.Component {
     
     return (
       <div>
-        <Layout fixedHeader>
+        <Layout fixedHeader fixedDrawer>
           <Header waterfall style = {{color: '#fff'}}>
               <HeaderRow title="UndocUHelp">
               <Navigation className="sections" style={{paddingRight: '325px'}} >
@@ -23,7 +24,7 @@ class App extends React.Component {
                       <a href="#/resources">RESOURCES</a>
                       <a href="#/about">ABOUT US</a>
                       <a href="#/login">ORGANIZATION LOGIN</a>
-                  </Navigation>
+              </Navigation>
               <SelectField label={''} value={1}>
                 <Option value={1}>English</Option>
                 <Option value={2}>Español</Option>
@@ -34,14 +35,10 @@ class App extends React.Component {
               </HeaderRow>
               
           </Header>
-          <Drawer title="Title">
-              <Navigation>
-                  <a href="#">Link</a>
-                  <a href="#">Link</a>
-                  <a href="#">Link</a>
-                  <a href="#">Link</a>
-              </Navigation>
-          </Drawer>
+          <Drawer title="Channel">
+            <Navbar />
+          </Drawer>  
+          
           
           {this.props.children}     
         

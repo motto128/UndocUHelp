@@ -7,28 +7,76 @@ import "firebase/firestore";
 // var citiesRef = db.collection("Organization"); 
 
 class Resources extends React.Component {
+    
+    constructor(props){
+        super(props);
+
+        this.state = {
+            items: []
+        };
+    
+    }
+    componentDidMount() {
+        const itemsRef = firebase.database().ref('channel/event');
+        itemsRef.on('value', (snapshot) => {
+          let items = snapshot.val();
+          let newState = [];
+          for (let item in items) {
+            newState.push({
+              id: item,
+              title: items[item].eName,
+              descr: items[item].eDescr
+            });
+          }
+          this.setState({
+            items: newState
+          });
+        });
+      }
+
   render() {
     return (
-        <div>
+
+        <div id='center'>
+
+            <h1 style={{textAlign: 'left',color: 'grey'}}>Local Resources</h1>
+            <div id='center'>
+                <SelectField label={''} value={1}>
+                    <Option value={1}>Washington</Option>
+                    <Option value={1}>Oregon</Option>
+                    <Option value={1}>California</Option>
+                
+                </SelectField>
+                    
+                <SelectField label={''} value={1}>
+                    <Option value={1}>Seattle</Option>
+                    <Option value={1}>Tacoma</Option>
+                    <Option value={1}>Bellevue</Option>
             
-                <h1 style={{textAlign: 'left',color: 'grey'}}>Local Resources</h1>
-                <div id='center'>
-            <SelectField label={''} value={1}>
-                <Option value={1}>Washington</Option>
-                <Option value={1}>Oregon</Option>
-                <Option value={1}>California</Option>
-                
-              </SelectField>
-              
-              <SelectField label={''} value={1}>
-                <Option value={1}>Seattle</Option>
-                <Option value={1}>Tacoma</Option>
-                <Option value={1}>Bellevue</Option>
-                
-              </SelectField>
-              
-        </div>
-           
+                </SelectField>
+            
+            </div>
+            {this.state.items.map((item) => { return (
+                                  
+                <div id='card'>
+                    <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
+                        <CardTitle expand style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/12/34876206422_8ec16fdde4_h.jpg) center / cover #46B6AC'}}>
+                        {item.title}</CardTitle>
+                        <CardText>
+                            {item.descr}
+                            <br/><br/>
+                            Phone Number: (206)685-6301
+                            <br/><br/>
+                            Email: undocu@uw.edu
+                            <br/><br/>
+                            Street Address: 3931 Brooklyn Avenue NE Box 355650 Seattle, Washington 98105
+                        </CardText>
+                        <CardActions border>
+                            <Button colored href="http://depts.washington.edu/ecc/lwb/">View Page</Button>
+                        </CardActions>
+                    </Card>
+                </div>
+            )})}
                 
             
             <div id='card'>
