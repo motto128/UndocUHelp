@@ -30,7 +30,7 @@ var config = {
 };
 firebase.initializeApp(config);
 var db = firebase.firestore();
-
+var database = firebase.database();
 
 //render the Application view
 ReactDOM.render(

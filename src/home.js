@@ -10,26 +10,18 @@ class Home extends React.Component {
             <Content>
             <div className="page-content">
             <Card shadow={0} style={{width: '1200px', margin: 'auto', paddingTop: '10px'}}>
-                <CardTitle style={{ color: '#fff', height: '250px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/11/cropped-35040525825_ae240e91fc_b-1.jpg) center / cover'}}>Welcome to UndocUHelp</CardTitle>
+                <CardTitle style={{ color: '#fff', height: '250px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/11/cropped-35040525825_ae240e91fc_b-1.jpg) center / cover'}}></CardTitle>
                 <CardText style={{fontWeight: '400'}}>
-                <h2>DACA Myth Busters</h2>
-                Leadership Without Borders has launched a digital campaign to demystify DACA concerns. The main objective is 
-                to create, develop, and share solutions on how we can support undocumented communities in Washington State. 
-                By creating best practices, such as myth busting misinformation on DACA&#8211;which has been recreated with 
-                permission of the Everett Community College’s Office of Diversity and Equity&#8211;we are able to provide support 
-                for undocumented students and give them knowledge they can use in their future.
-                <br></br>
-                <br></br>
-                Many students fear they cannot attend college due to their undocumented status; however, this is a myth along with 
-                many others that discourage students desiring higher education. We have launched a digital campaign to bring awareness 
-                to our undocumented students and campus community about myths and the DACA Program. Each week, we will bust another myth 
-                and offer resources on what to do in each scenarios. The workshops are as followed: Week 1- <span data-term="goog_1050343763">Jan. 8</span>, 
-                Week 2- Jan. 15, Week 3- Jan. 22, Week 4 &#8211; Jan. 29, Week 5- <span data-term="goog_1050343764">Feb. 5</span> and Week 6- Feb. 12. All 
-                students are encouraged to come and learn more about DACA!
+                <h2>Welcome to UndocUHelp!</h2>
+                UndocUHelp is a platform that brings together local organizations that provide advice and guidance to 
+                Undocumented Students. We strive to make sure that no one is left behind by building connections that 
+                make undocumented students feel right at home. 
                 </CardText>
                 <CardActions border>
-                    <Button colored>Get Started</Button>
+                    <a href="#/resources"><Button colored>Start</Button></a>
+                    <a href="#/about"><Button colored>Learn More</Button></a>
                 </CardActions>
+                
                 <CardMenu style={{color: '#fff'}}>
                     <IconButton name="share" />
                 </CardMenu>
