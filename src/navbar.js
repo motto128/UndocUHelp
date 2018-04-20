@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router'
-import { Layout, Navigation, Drawer, Header, Textfield, Button } from 'react-mdl';
+import { Layout, Navigation, Drawer, Header, Textfield, Button, ListItem, ListItemContent, ListItemAction, Icon, List } from 'react-mdl';
 import firebase from 'firebase';
 //top level Navbar for the app
 class NavBar extends React.Component {
@@ -10,27 +10,7 @@ class NavBar extends React.Component {
     this.state = {};
     //this.channelName
   }
-  
-   componentDidMount() {
-    //Add a listener and callback for authentication events 
-    firebase.auth().onAuthStateChanged(user => {
-      if(user) {
-        console.log('Auth state changed: logged in as', user.email);
-        this.setState({userId:user.uid});
-        hashHistory.push('/channels');
-      }
-      else{
-        console.log('Auth state changed: logged out');
-        this.setState({userId: null});
-        hashHistory.push('/login'); //null out the saved state
-      }
-    })
-  }
 
-  signOut(){
-    /* Sign out the user, and update the state */
-    firebase.auth().signOut();
-  }
   channelName(e) {
     this.setState({name: e.target.value});
   }
@@ -40,6 +20,9 @@ class NavBar extends React.Component {
     var create = <Link to={link} activeClassName="active">{hash}</Link>;
     this.setState({add: this.create});
   }
+  logout() {
+    firebase.auth().signOut();
+  }
 
   render() {
     //console.log(this.props.param.channelId);
@@ -47,16 +30,20 @@ class NavBar extends React.Component {
       <div>
         
           <Navigation>
-            <Link to="/channel/event" activeClassName="active">#Add Event</Link>
-            <Link to="/channel/random" activeClassName="active">#random</Link>
-            {this.state.add}
-            <Textfield 
-                onChange={this.channelName}
-                label="add channel" 
-                style={{width: '150px'}} 
-            />
-            <Button onClick={this.createChannel}>create</Button>
-            <Link to="/login" onClick={()=>this.signOut()}>Sign Out</Link>
+            <div>
+            <ListItem twoLine>
+              <ListItemContent avatar="person" subtitle="2 posts">Joe Motto</ListItemContent>
+                
+            </ListItem>
+            </div>
+            
+            <Link to="/channel/event" activeClassName="active"># ADD NEW EVENT</Link>
+            <Link to="/channel/random" activeClassName="active"># ADD NEW RESOURSE</Link>
+            
+            
+            <div>
+            <Button raised accent ripple onClick={()=>this.logout()}>Sign Out </Button>
+            </div>
           </Navigation>     
           
       </div>

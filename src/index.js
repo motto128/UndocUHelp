@@ -18,6 +18,7 @@ import Join from './join';
 import Home from './home';
 import Channel from './channel';
 import ChannelBox from './channelbox';
+import Navbar from './navbar';
 
 
 var config = {
@@ -29,23 +30,21 @@ var config = {
   messagingSenderId: "160599012781"
 };
 firebase.initializeApp(config);
-var db = firebase.firestore();
-var database = firebase.database();
+
 
 //render the Application view
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       {/*<IndexRoute component={Navbar}/>*/}
-      
       <Route path="/home" component={Home} />
       <Route path="/join" component={Join} />
       <Route path="/login" component={Login} />
-      <Route path="/channels" component={Channel} />
-      <Route path="/channel/:channelId" component={ChannelBox} />  
       <Route path="/about" component={AboutUs} />
       <Route path="/resources" component={Resources} />
       <Route path="/events" component={Events} />
+      <Route path="/channels" component={Channel} />
+      <Route path="/channel/:channelId" component={ChannelBox} />  
            
     </Route>
   </Router>

@@ -1,8 +1,11 @@
-import React from 'react';
+import React  from 'react';
 //import Time from 'react-time';
 import { Link, hashHistory } from 'react-router';
 import { Textfield, Button, List, ListItem, ListItemContent, ListItemAction, Dialog, DialogContent, DialogTitle, DialogActions} from 'react-mdl';
 import firebase from 'firebase';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class ChannelBox extends React.Component {
     
@@ -10,8 +13,7 @@ class ChannelBox extends React.Component {
         super(props);
         this.state = {
                 eventName:'',
-                eventDate:'',
-                eventTime:'',
+                eventDate: moment(),
                 eventLoc:'',
                 eventLink:'',
                 eventDescr:''
@@ -20,7 +22,6 @@ class ChannelBox extends React.Component {
         };
         this.handleEName = this.handleEName.bind(this);
     	this.handleEDate = this.handleEDate.bind(this);
-        this.handleETime = this.handleETime.bind(this);
         this.handleELoc = this.handleELoc.bind(this);
     	this.handleELink = this.handleELink.bind(this);
         this.handleEDescr = this.handleEDescr.bind(this);
@@ -30,10 +31,7 @@ class ChannelBox extends React.Component {
         this.setState({eventName: e.target.value});
     }
     handleEDate(e) {
-        this.setState({eventDate: e.target.value});
-    }
-    handleETime(e) {
-        this.setState({eventTime: e.target.value});
+        this.setState({eventDate: e});
     }
     handleELoc(e) {
         this.setState({eventLoc: e.target.value});
@@ -46,16 +44,16 @@ class ChannelBox extends React.Component {
     }
     
     //post a new message to the database
-    submitPost(event) {
-        event.preventDefault(); //don't submit
+    submitPost(e) {
+        e.preventDefault(); //don't submit
         /* Add a new Channel to the database */
         var channelName = this.props.params.channelId;
-        //this.setState({name: channelName});
+        console.log(this.props.params.channelId);
+        var d = this.state.eventDate.toString();
         var postRef = firebase.database().ref('channel/'+channelName); //the channel in the JOITC
         var newPost = {
             eName: this.state.eventName,
-            eDate: this.state.eventDate,
-            eTime: this.state.eventTime,
+            eDate: d,
             eLoc: this.state.eventLoc,
             eLink: this.state.eventLink,
             eDescr: this.state.eventDescr,
@@ -66,8 +64,7 @@ class ChannelBox extends React.Component {
         
         this.setState({
             eventName:'',
-            eventDate:'',
-            eventTime:'',
+            eventDate: '',
             eventLoc:'',
             eventLink:'',
             eventDescr:''
@@ -87,80 +84,105 @@ class ChannelBox extends React.Component {
         //console.log(channelName);
   
         return(
-            <div className='channelBox'id = 'center'>
-                <h1>{this.props.params.channelId}</h1>
-                <div className='channelPost'>
-                    <List>
-                        <ListItem>
-
-                        <Textfield 
-                        onChange={(e) => this.handleEName(e)}
-                        value = {this.state.eventName} 
-                        label="Name of Event"
-                        floatingLabel 
-                        style={{width: '400px'}} 
-                        />
-                        </ListItem>
-                       
-                        <ListItem>
-                        <Textfield
+                <div className='channelBox' id = 'center' >
+                    <h1>Post New Event</h1>
+                    
+                    <div >
+                    
+                        <List>
+                            <p>Choose date and time of event:</p>
+                            <ListItem>
+                            
+                            <DatePicker 
+                            inline selected={this.state.eventDate} 
                             onChange={(e) => this.handleEDate(e)}
-                            value = {this.state.eventDate} 
-                            label="Date of Event (02/05/19)"
-                            floatingLabel
-                            style={{width: '400px'}}
-                        />
-                        </ListItem>
-                    
-                        <ListItem>
-                        <Textfield
-                            onChange={(e) => this.handleETime(e)}
-                            value={this.state.eventTime}
-                            label="Time of Event (1:30 pm - 4:30 pm)"
-                            floatingLabel
-                            style={{width: '400px'}}
-                        />
-                        </ListItem>
-                    
-                        <ListItem>
-                        <Textfield
-                            onChange={(e) => this.handleELoc(e)}
-                            value={this.state.eventLoc}
-                            label="Location of Event"
-                            floatingLabel
-                            style={{width: '400px'}}
-                        />
-                        </ListItem>
+                            showTimeSelect
+                            
+                            />
+                            </ListItem>
+                            
+                           
+                            <ListItem>
 
-                        <ListItem>
-                        <Textfield
-                            onChange={(e) => this.handleELink(e)}
-                            value={this.state.eventLink}
-                            label="Link of Event"
-                            floatingLabel
-                            style={{width: '400px'}}
-                        />
-                        </ListItem>
-
-                        <ListItem>
-                        <Textfield
-                            onChange={(e) => this.handleEDescr(e)}
-                            value={this.state.eventDescr}
-                            label="Description of Event"
-                            floatingLabel
-                            rows={3}
-                            style={{width: '400px'}}
-                        />
-                        </ListItem>
+                            <Textfield 
+                            onChange={(e) => this.handleEName(e)}
+                            value = {this.state.eventName} 
+                            label="Name of Event"
+                            floatingLabel 
+                            style={{width: '400px'}} 
+                            />
+                            </ListItem>
                         
-                        <ListItem>
-                        <Button primary onClick={(e) => this.submitPost(e)}>Post</Button>
-                        </ListItem>
-                    </List>
-                    
+                        
+                            <ListItem>
+                            <Textfield
+                                onChange={(e) => this.handleELoc(e)}
+                                value={this.state.eventLoc}
+                                label="Location of Event"
+                                floatingLabel
+                                style={{width: '400px'}}
+                            />
+                            </ListItem>
+
+                            <ListItem>
+                            <Textfield
+                                onChange={(e) => this.handleELink(e)}
+                                value={this.state.eventLink}
+                                label="Link of Event"
+                                floatingLabel
+                                style={{width: '400px'}}
+                            />
+                            </ListItem>
+
+                            <ListItem>
+                            <Textfield
+                                onChange={(e) => this.handleEDescr(e)}
+                                value={this.state.eventDescr}
+                                label="Description of Event"
+                                floatingLabel
+                                rows={3}
+                                style={{width: '400px'}}
+                            />
+                            </ListItem>
+                            
+                            <ListItem>
+                            <Button raised colored onClick={(e) => this.submitPost(e)}>Post</Button>
+                            </ListItem>
+                        </List>
+                        
+                        
+                            
+                            <ListItem>
+                             {/*<ListItemContent>
+                            <DatePicker
+                                inline
+                                selected={this.state.eventTime}
+                                onChange={(e) => this.handleETime(e)}
+                                showTimeSelect
+                                showTimeSelectOnly
+                                
+                                
+                                timeCaption="Start"                             
+                            />
+                            </ListItemContent>
+                           <ListItemContent>
+                            <DatePicker
+                                inline
+                                selected={this.state.eventTime}
+                                onChange={(e) => this.handleETime(e)}
+                                showTimeSelect
+                                showTimeSelectOnly
+                                
+                                dateFormat="LT"
+                                timeCaption="End"                             
+                            />
+                            </ListItemContent>*/}
+                            </ListItem>
+                        
+                        
+                    </div>
+                    {chanName} 
                 </div>
-                {chanName} 
-            </div>
         );
     }
 }
