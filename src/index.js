@@ -18,6 +18,7 @@ import Join from './join';
 import Home from './home';
 import Channel from './channel';
 import ChannelBox from './channelbox';
+import JoinDetail from './joinDetail';
 
 
 var config = {
@@ -46,6 +47,7 @@ ReactDOM.render(
       <Route path="/about" component={AboutUs} />
       <Route path="/resources" component={Resources} />
       <Route path="/events" component={Events} />
+      <Route path="/join-step2" component={JoinDetail} />
            
     </Route>
   </Router>
