@@ -1,6 +1,8 @@
 import React from 'react';
+import './index.css';
 import { Link, hashHistory } from 'react-router';
 import { Textfield, Button, List, ListItem } from 'react-mdl';
+import { Icon, IconButton, Card, CardActions, CardMedia , CardMenu, CardTitle, CardText , Layout, Drawer, Header, Navigation, HeaderRow, Content } from 'react-mdl';
 import firebase from 'firebase';
 import md5 from 'js-md5';
 
@@ -119,8 +121,10 @@ class Join extends React.Component {
 
     render() {
         return (
+            <div id='card'>
+            <Card shadow={0} style={{width: "900", margin: 'auto'}}>
             <div className='signup' id='center'>
-                <h1>Sign Up</h1>
+                <h1 className="signInText">Sign Up</h1>
                 <List>
                 <ListItem>
                 <Textfield
@@ -165,7 +169,7 @@ class Join extends React.Component {
                 </ListItem>
                 
                 <ListItem>
-                <Button raised colored ripple onClick={(e) => {this.signUp(e)}}>NEXT</Button>
+                <Button style={styles.buttonStyle} raised colored ripple onClick={(e) => {this.signUp(e)}}>NEXT</Button>
                 </ListItem>
                 
 
@@ -179,7 +183,16 @@ class Join extends React.Component {
                 
                 </List>
             </div>
+            </Card>
+            </div>
+            
         );
+    }
+}
+
+const styles = {
+    buttonStyle:{
+        backgroundColor: "#2196F3"
     }
 }
 
