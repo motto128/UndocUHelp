@@ -46,7 +46,8 @@ class App extends React.Component {
     return (
       <div>
         <Layout fixedHeader fixedDrawer>
-          <Header title="UndocUHelp" waterfall style = {{color: '#fff'}}>
+          <Header  waterfall style = {{color: '#fff'}}>
+            <HeaderRow title="UndocUHelp" className="Header">
               
               <Navigation className="sections" style={{paddingRight: '325px'}} >
                       <a href="#/home">HOME</a>
@@ -64,7 +65,7 @@ class App extends React.Component {
                 <Option value={4}>Deutsch</Option>
                 <Option value={5}>Português</Option>
               </SelectField>
-      
+            </HeaderRow>
              
               
           </Header>
@@ -88,7 +89,7 @@ class App extends React.Component {
 
 const styles = {
   navStyle:{
-      color: "white"
+      backgroundColor: "#2196F3"
   }
 }
 export default App;
