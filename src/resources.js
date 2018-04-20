@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 import { Card, CardActions, CardText, CardTitle, Button} from 'react-mdl';
 import {SelectField, Option, MenuItem} from 'react-mdl-extra';
 import firebase from 'firebase';
@@ -38,8 +39,7 @@ class Resources extends React.Component {
     return (
 
         <div id='center'>
-
-            <h1 style={{textAlign: 'left',color: 'grey'}}>Local Resources</h1>
+            <h1 style={{textAlign: 'center',color: '#4A4A4A'}}>Local Resources</h1>
             <div id='center'>
                 <SelectField label={''} value={1}>
                     <Option value={1}>Washington</Option>
@@ -72,7 +72,7 @@ class Resources extends React.Component {
                             Street Address: 3931 Brooklyn Avenue NE Box 355650 Seattle, Washington 98105
                         </CardText>
                         <CardActions border>
-                            <Button colored href="http://depts.washington.edu/ecc/lwb/">View Page</Button>
+                            <Button style={styles.buttonStyle} raised colored ripple href="http://depts.washington.edu/ecc/lwb/">View Page</Button>
                         </CardActions>
                     </Card>
                 </div>
@@ -95,7 +95,7 @@ class Resources extends React.Component {
                         Street Address: 3931 Brooklyn Avenue NE Box 355650 Seattle, Washington 98105
                     </CardText>
                     <CardActions border>
-                        <Button colored href="http://depts.washington.edu/ecc/lwb/">View Page</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="http://depts.washington.edu/ecc/lwb/">View Page</Button>
                     </CardActions>
                 </Card>
             </div>
@@ -118,7 +118,7 @@ class Resources extends React.Component {
                         Event Location: Samuel E. Kelly Ethnic Cultural Center - Unity Suite
                     </CardText>
                     <CardActions border>
-                        <Button colored href="https://docs.google.com/forms/d/e/1FAIpQLSeskYQB_NUA_buV8RfxjNK-fioKIoppfP31GKd32K05wBzJmA/viewform?c=0&w=1">Event Link</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="https://docs.google.com/forms/d/e/1FAIpQLSeskYQB_NUA_buV8RfxjNK-fioKIoppfP31GKd32K05wBzJmA/viewform?c=0&w=1">Event Link</Button>
                     </CardActions>
                 </Card>
             </div>
@@ -137,8 +137,8 @@ class Resources extends React.Component {
                         
                     </CardText>
                     <CardActions border>
-                        <Button colored href="http://www.washington.edu/omad/2018/01/19/uw-thedream-us-announce-new-scholarship-partnership-to-benefit-undocumented-students/">Read More</Button>
-                        <Button colored href="http://www.thedream.us/scholarships/">Apply Here</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="http://www.washington.edu/omad/2018/01/19/uw-thedream-us-announce-new-scholarship-partnership-to-benefit-undocumented-students/">Read More</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="http://www.thedream.us/scholarships/">Apply Here</Button>
 
                     </CardActions>
                 </Card>
@@ -160,7 +160,7 @@ class Resources extends React.Component {
                         #celebratefirstgen
                     </CardText>
                     <CardActions border>
-                        <Button colored href="http://www.washington.edu/omad/2017/11/05/first-generation-college-celebration/">Read More</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="http://www.washington.edu/omad/2017/11/05/first-generation-college-celebration/">Read More</Button>
                     </CardActions>
                 </Card>
             </div>
@@ -169,5 +169,12 @@ class Resources extends React.Component {
   }
 }
 
+const styles = {
+    buttonStyle:{
+        backgroundColor: "#2196F3",
+        marginRight: "15px",
+        marginLeft: "30px"
+    }
+  }
 
 export default Resources;

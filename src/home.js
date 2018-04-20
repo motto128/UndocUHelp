@@ -71,7 +71,8 @@ class Home extends React.Component {
 const styles = {
   buttonStyle:{
       backgroundColor: "#2196F3",
-      marginRight: "30px"
+      marginRight: "15px",
+      marginLeft: "30px"
   }
 }
 export default Home;
