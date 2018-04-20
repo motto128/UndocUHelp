@@ -1,3 +1,5 @@
+/** 
+
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import { Textfield, Button, List, ListItem } from 'react-mdl';
@@ -10,6 +12,7 @@ import md5 from 'js-md5';
  * Expects `signUpCallback` and `signInCallback` props
  */
 
+ /*
 class Join extends React.Component {
  
     constructor(props){
@@ -86,6 +89,8 @@ class Join extends React.Component {
         /*confirm that it is email address, display name not be blank
         password is at least 6 characters and both password input matches
         before creating new user on firebase*/
+
+        /* 
         if(name === '') {
             this.setState({
                 orgName:{err:'input valid email'}
@@ -246,3 +251,4 @@ class Join extends React.Component {
 }
 
 export default Join;
+*/
