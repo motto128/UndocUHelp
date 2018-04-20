@@ -1,7 +1,9 @@
 import React from 'react';
+import './index.css';
 import { Link, hashHistory } from 'react-router'
 import { Textfield, Button, List, ListItem } from 'react-mdl';
 import firebase from 'firebase';
+import { Icon, IconButton, Card, CardActions, CardMedia , CardMenu, CardTitle, CardText , Layout, Drawer, Header, Navigation, HeaderRow, Content } from 'react-mdl'
 
 
 class Login extends React.Component {
@@ -56,9 +58,11 @@ class Login extends React.Component {
 
   render() {  
     return (
-        
+
+        <div id='card'>
+        <Card shadow={0} style={{width: "700", margin: 'auto'}}>
         <div className='signin' id='center'>
-            <h1>Sign In</h1>
+            <h1 className="signInText">Sign In</h1>
             <List>
             <ListItem>
             <Textfield
@@ -82,7 +86,9 @@ class Login extends React.Component {
             </ListItem>
             
             <ListItem>
-            <Button raised colored ripple onClick={(e) => this.signIn(e)}>SIGN IN</Button>
+            <Button style={styles.buttonStyle} raised colored ripple onClick={(e) => this.signIn(e)}>
+                SIGN IN
+            </Button>
             </ListItem>
             
             <p>Dont have an account yet? <Link to="/join">SIGN UP</Link></p>
@@ -90,8 +96,18 @@ class Login extends React.Component {
             </List>
         </div>
        
+        </Card>
+        </div>
+        
+        
     );
   }
+}
+
+const styles = {
+    buttonStyle:{
+        backgroundColor: "#2196F3"
+    }
 }
 
 export default Login;

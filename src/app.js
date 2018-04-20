@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 import { Link, hashHistory } from 'react-router'
 import { Textfield, Icon, IconButton, Button, Card, CardActions, CardMedia , CardMenu, CardTitle, CardText , Layout, Drawer, Header, Navigation, HeaderRow, Content } from 'react-mdl';
 import {SelectField, Option} from 'react-mdl-extra'
@@ -54,6 +55,7 @@ class App extends React.Component {
                       {!this.state.userId &&
                       <a href="#/login">REGISTER / LOGIN</a>
                       }
+
               </Navigation>
               <SelectField label={''} value={1} >
                 <Option value={1}>English</Option>
@@ -81,6 +83,12 @@ class App extends React.Component {
       </div>  
        
     )
+  }
+}
+
+const styles = {
+  navStyle:{
+      color: "white"
   }
 }
 export default App;

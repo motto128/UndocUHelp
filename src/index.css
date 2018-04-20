@@ -4,16 +4,21 @@
     margin-top: 50px;
     margin-bottom: 70px;
 }
-
-#sections{
-    color: blue
+/* added this */
+.Header{
+    background-color: #2196F3;
 }
+.signInText{
+    color: #4A4A4A;
+}
+
 
 #center {
     margin: auto;
-    width: 25%;
+    width: 50%;
     padding: 10px;
 }
+
 
 
 .container {
