@@ -18,8 +18,8 @@ class Home extends React.Component {
                 make undocumented students feel right at home. 
                 </CardText>
                 <CardActions border>
-                    <a href="#/resources"><Button colored>Start</Button></a>
-                    <a href="#/about"><Button colored>Learn More</Button></a>
+                    <a href="#/resources"><Button style={styles.buttonStyle} raised colored ripple>Start</Button></a>
+                    <a href="#/about"><Button style={styles.buttonStyle} raised colored ripple>Learn More</Button></a>
                 </CardActions>
                 
                 <CardMenu style={{color: '#fff'}}>
@@ -65,6 +65,13 @@ class Home extends React.Component {
             
         </div>
     )
+  }
+}
+
+const styles = {
+  buttonStyle:{
+      backgroundColor: "#2196F3",
+      marginRight: "30px"
   }
 }
 export default Home;
