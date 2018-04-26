@@ -46,7 +46,7 @@ class App extends React.Component {
     return (
       <div>
         <Layout fixedHeader fixedDrawer>
-          <Header  waterfall style = {{color: '#fff'}}>
+          <Header waterfall style = {{color: '#fff'}}>
             <HeaderRow title="UndocUHelp" className="Header">
               
               <Navigation className="sections" style={{paddingRight: '325px'}} >
