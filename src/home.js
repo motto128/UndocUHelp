@@ -9,7 +9,8 @@ class Home extends React.Component {
             <Layout fixedHeader>
             <Content>
             <div className="page-content">
-            <Card shadow={0} style={{width: '1200px', margin: 'auto', paddingTop: '10px'}}>
+            <Card shadow={0} style={{width: '1200px', margin: 'auto', paddingTop: '10px'}} >
+            {/* style={{width: '1200px', margin: 'auto', paddingTop: '10px'}} */}
                 <CardTitle style={{ color: '#fff', height: '250px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/11/cropped-35040525825_ae240e91fc_b-1.jpg) center / cover'}}></CardTitle>
                 <CardText style={{fontWeight: '400'}}>
                 <h2>Welcome to UndocUHelp!</h2>
