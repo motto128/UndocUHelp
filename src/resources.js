@@ -38,15 +38,16 @@ class Resources extends React.Component {
   render() {
     return (
 
-        <div id='center'>
-            <h1 style={{textAlign: 'center',color: '#4A4A4A'}}>Local Resources</h1>
-            <div id='center'>
+        <div className='center'>
+            <h2 style={{textAlign: 'center',color: '#4A4A4A'}}>Local Resources</h2>
+            <div style={styles.filterStyle}>
                 <SelectField label={''} value={1}>
                     <Option value={1}>Washington</Option>
                     <Option value={1}>Oregon</Option>
                     <Option value={1}>California</Option>
                 
                 </SelectField>
+               
                     
                 <SelectField label={''} value={1}>
                     <Option value={1}>Seattle</Option>
@@ -59,8 +60,8 @@ class Resources extends React.Component {
             {this.state.items.map((item) => { return (
                                   
                 <div id='card'>
-                    <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
-                        <CardTitle expand style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/12/34876206422_8ec16fdde4_h.jpg) center / cover #46B6AC'}}>
+                    <Card shadow={0} style={styles.cardStyle}>
+                        <CardTitle expand style={{color: '#fff',height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/12/34876206422_8ec16fdde4_h.jpg) center / cover #46B6AC'}}>
                         {item.title}</CardTitle>
                         <CardText>
                             {item.descr}
@@ -80,7 +81,7 @@ class Resources extends React.Component {
                 
             
             <div id='card'>
-                <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
+                <Card shadow={0} style={styles.cardStyle}>
                     <CardTitle expand style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/12/34876206422_8ec16fdde4_h.jpg) center / cover #46B6AC'}}>
                     Leadership Without Borders</CardTitle>
                     <CardText>
@@ -101,7 +102,7 @@ class Resources extends React.Component {
             </div>
         
             <div id='card'>
-                <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
+                <Card shadow={0} style={styles.cardStyle}>
                     <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2018/02/022.png) center / cover'}}>
                     Spring Quarter 2018 Undocu Ally Training</CardTitle>
                     <CardText>
@@ -123,7 +124,7 @@ class Resources extends React.Component {
                 </Card>
             </div>
             <div id='card'>
-                <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
+                <Card shadow={0} style={styles.cardStyle}>
                     <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://www.washington.edu/omad/files/2017/09/OMAD-purple-only-banner.png) center / cover'}}>
                     UW, TheDream.US announce new scholarship partnership to benefit undocumented students</CardTitle>
                     <CardText>
@@ -144,7 +145,7 @@ class Resources extends React.Component {
                 </Card>
             </div>
             <div id='card'>
-                <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
+                <Card shadow={0} style={styles.cardStyle}>
                     <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2016/07/lwb.png) center / cover'}}>
                     UW to Participate in National First-Generation College Celebration on November 8</CardTitle>
                     <CardText>
@@ -174,6 +175,13 @@ const styles = {
         backgroundColor: "#2196F3",
         marginRight: "15px",
         marginLeft: "30px"
+    },cardStyle:{
+        width: "90%", 
+        margin: "auto", 
+        
+    },filterStyle:{
+        margin: "auto",
+        width: "90%"
     }
   }
 
