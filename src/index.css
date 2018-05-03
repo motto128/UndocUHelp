@@ -6,8 +6,7 @@
 } */
 
 #card {
-    margin-top: 50px;
-    margin-bottom: 70px;
+    margin-top: 20px;
 }
 /* added this */
 .Header{
@@ -15,6 +14,7 @@
 }
 .signInText{
     color: #4A4A4A;
+    text-align: center;
 }
 
 

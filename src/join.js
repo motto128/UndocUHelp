@@ -122,9 +122,9 @@ class Join extends React.Component {
     render() {
         return (
             <div id='card'>
-            <Card shadow={0} style={{width: "900", margin: 'auto'}}>
+            <Card shadow={0} style={styles.cardStyle}>
             <div className='signup' id='center'>
-                <h1 className="signInText">Sign Up</h1>
+                <h2 className="signInText">Sign Up</h2>
                 <List>
                 <ListItem>
                 <Textfield
@@ -193,6 +193,11 @@ class Join extends React.Component {
 const styles = {
     buttonStyle:{
         backgroundColor: "#2196F3"
+    },
+    cardStyle:{
+        width: "90%", 
+        margin: 'auto'
+        
     }
 }
 
