@@ -4,6 +4,7 @@
   "description": "A demo of react modules",
   "author": "Motto_Kuzzi",
   "private": true,
+  "homepage": "motto128.github.io/Motto_Kuzzi_Alpha_1.0",
   "devDependencies": {
     "react-scripts": "0.7.0"
   },
