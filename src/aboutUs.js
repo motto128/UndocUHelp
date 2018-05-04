@@ -27,7 +27,19 @@ class AboutUs extends React.Component {
                     information including Contact, Address, Hours, Events, as well as external links.
                     </p>
 
+                    <h4>How can I access Events?</h4>
+                    <p>
+                    Events can be accessed by either searching or browsing under the Resources section (under the “Events” tab), where the Events can be filtered down. To access more information about the Resource Organization, the 'More Info' button can be selected to access their profile page; that includes all of the organization's information including Contact, Address, Hours, Events, as well as external links.
+                    </p>
 
+                    <h4>How can I sign up as an Organization?</h4>
+                    <l>
+                        <li>Organizations can sign up to UndocUHelp by clicking on the “Register/Login” section on the top navigation bar.</li>
+                        <li>	Click on the “Sign Up” link below the log in form. </li>
+                        <li>	Enter all the required fields related to your organization’s information. </li>
+                        <li>	Click on the “Next” button below the forms to enter your new profile. By clicking “Next” the account is created and a new screen appears (Profile Page), where more information can be added. </li>
+                    </l>
+                    <p></p>
                     <p>
                     Developed in Seattle by four Informatics Students from the University of Washington.
                     </p>
@@ -35,36 +47,8 @@ class AboutUs extends React.Component {
                 </Card>
             </div>
 
-            <div id='card'>
-                <Card shadow={0} style={{width: '512px', margin: 'auto'}}>
-                    <CardTitle expand style={{color: '#fff', height: '176px', background: 'url(http://www.getmdl.io/assets/demos/dog.png) bottom right 15% no-repeat #46B6AC'}}>
-                    Joe Motto</CardTitle>
-                    <CardText>
-                        Deveoper and best Dominos customer. <br/><br/>
-                        Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit.
-                        Aenan convallis.
-                    </CardText>
-                    <CardActions border>
-                        <Button colored>View Updates</Button>
-                    </CardActions>
-                </Card>
-            </div>
         
-            <div id='card'>
-                <Card shadow={0} style={{width: '512px', margin: 'auto'}}>
-                    <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://www.getmdl.io/assets/demos/welcome_card.jpg) center / cover'}}>
-                    Jorge Torrez</CardTitle>
-                    <CardText>
-                        Deveoper and best Dominos customer.<br/><br/>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Mauris sagittis pellentesque lacus eleifend lacinia...
-                    </CardText>
-                    <CardActions border>
-                        <Button colored>Get Started</Button>
-                    </CardActions>
-                </Card>
-            </div>
+            
         </div>
     )
   }

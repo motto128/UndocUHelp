@@ -1,8 +1,12 @@
-
+/* .card{
+    
+    width: 1200px;
+    margin: auto;
+    padding-top: 10px
+} */
 
 #card {
-    margin-top: 50px;
-    margin-bottom: 70px;
+    margin-top: 20px;
 }
 /* added this */
 .Header{
@@ -16,9 +20,13 @@
 #center {
     margin: auto;
     width: 50%;
-    padding: 10px;
+   
+    
 }
-
+.center{
+    margin: auto;
+    width: 100%;
+}
 
 
 .container {
