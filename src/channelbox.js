@@ -1,11 +1,13 @@
 import React  from 'react';
-//import Time from 'react-time';
+import Time from 'react-time';
+import './index.css';
 import { Link, hashHistory } from 'react-router';
-import { Textfield, Button, List, ListItem, ListItemContent, ListItemAction, Dialog, DialogContent, DialogTitle, DialogActions} from 'react-mdl';
+import { Textfield, Button, List, ListItem, ListItemContent, ListItemAction, Dialog, DialogContent, DialogTitle, DialogActions, Icon} from 'react-mdl';
 import firebase from 'firebase';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
+import noUserPic from './img/no-user-pic.png';
 
 class ChannelBox extends React.Component {
     
@@ -64,7 +66,7 @@ class ChannelBox extends React.Component {
         
         this.setState({
             eventName:'',
-            eventDate: '',
+            eventDate: moment(),
             eventLoc:'',
             eventLink:'',
             eventDescr:''
@@ -72,9 +74,9 @@ class ChannelBox extends React.Component {
          }); //empty out post (controlled input)
     }
 
-    editPost(event) {
+    /*editPost(event) {
         //console.log(event.target.value);
-    }
+    }*/
 
     render() {
 
@@ -84,12 +86,13 @@ class ChannelBox extends React.Component {
         //console.log(channelName);
   
         return(
+            
                 <div className='channelBox' id = 'center' >
-                    <h1>Post New Event</h1>
+                    <h1 id = 'center'>Post New Event</h1>
                     
                     <div >
                     
-                        <List>
+                        <List id = 'center'>
                             <p>Choose date and time of event:</p>
                             <ListItem>
                             
@@ -183,6 +186,7 @@ class ChannelBox extends React.Component {
                     </div>
                     {chanName} 
                 </div>
+            
         );
     }
 }
@@ -201,16 +205,18 @@ class ChannelList extends React.Component {
         });
         
         var name = this.props.channelName;
-        
+        var currentUser = firebase.auth().currentUser.uid;
         // Add a listener for changes to the chirps object, and save in the state 
 
-        var postRef = firebase.database().ref('channel/'+name);
+        var postRef = firebase.database().ref('channel/event');
         postRef.on('value', (snapshot) => {
             var postArray = []; //could also do this processing in render
             snapshot.forEach(function(child){
-                var message = child.val();
-                message.key = child.key; //save the unique id for later
-                postArray.push(message); //make into an array
+                if (currentUser == child.val().userId) {
+                    var message = child.val();
+                    message.key = child.key; //save the unique id for later
+                    postArray.push(message); //make into an array
+                }
             });
             
             postArray.sort((a,b) => b.time - a.time); //reverse order
@@ -235,12 +241,35 @@ class ChannelList extends React.Component {
         console.log(this.state.postList);
         var chan = this.props.channelName;
         var postItems = this.state.postList.map((message) => {
-            console.log(this.state.users[message.userId]);
+            
             return <PostItem message={message} user={this.state.users[message.userId]} key={message.key} chan={chan}/>
         })
-        return (<List style={{width: '650px'}}>{postItems}</List>);
+        return (<List style={{width: '700px'}}>{postItems}</List>);
     }
 }
+/*
+class Item extends React.Component {
+    render() {
+        var avatar = (this.props.user.avatar !== '' ? this.props.user.avatar : noUserPic);
+        return (
+        <div>
+            <ListItem threeLine>
+                <ListItemContent avatar={avatar} subtitle={this.props.message.eDescr}>
+                    {this.props.message.eName}
+                    
+                
+                </ListItemContent>
+                <ListItemAction>
+                    <Button raised accent ripple>edit</Button>
+                </ListItemAction>
+            </ListItem>
+              
+        </div>
+              
+        );
+      }
+    
+}*/
 
 //A single post
 class PostItem extends React.Component {
@@ -249,7 +278,7 @@ class PostItem extends React.Component {
 		super(props)
         this.state ={'edit': true};
 
-        this.showEdit = this.showEdit.bind(this);
+        //this.showEdit = this.showEdit.bind(this);
 		this.deleteNote = this.deleteNote.bind(this);
         this.handleOpenDialog = this.handleOpenDialog.bind(this);
         this.handleCloseDialog = this.handleCloseDialog.bind(this);
@@ -257,16 +286,18 @@ class PostItem extends React.Component {
         this.handleCloseEdit = this.handleCloseEdit.bind(this);
         this.editPost = this.editPost.bind(this);
         this.handleCloseEdit = this.handleCloseEdit.bind(this);
+        //this.updatePost = this.updatePost.bind(this);
 	}
     // if the user click only on their own post will enable buttons to edit
-    showEdit() {
-        console.log("you clicked", this.props.message.text);
+    /*showEdit() {
+        
         var currentUser = firebase.auth().currentUser.uid; 
+        console.log(currentUser);
         if (currentUser === this.props.message.userId) {
             this.setState({edit: false});
         }
-        //console.log(this.state.edit);
-    }
+        console.log(this.state.edit);
+    }*/
     handleOpenDialog() {
         this.setState({
             openDialog: true
@@ -295,9 +326,11 @@ class PostItem extends React.Component {
 		firebase.database().ref('channel/' + this.props.chan+"/"+this.props.message.key).remove();
 	}
     // reuploads the new edited text
-     editPost() {
+     editPost(e) {
+        e.preventDefault();
         var userRef = firebase.database().ref('channel/' + this.props.chan+"/"+this.props.message.key);
-        userRef.child('text').set(this.state.post);
+        userRef.child('eName').set(this.state.post);
+        //this.setState({post: ''})
     }
     //changes the text in post 
     updatePost(e) {
@@ -307,33 +340,33 @@ class PostItem extends React.Component {
     render() {
         return (
             <div>
-                <ListItem threeLine onClick={this.showEdit}>
+                <ListItem threeLine>
                     
-                    <ListItemContent avatar={this.props.user.avatar} subtitle={this.props.message.text}>
-                        {this.props.user.name} <Time value={this.props.message.time} relative/>
+                    <ListItemContent avatar={this.props.user.avatar} subtitle={this.props.message.eDescr}>
+                        {this.props.message.eName}
                     </ListItemContent>
                     
                     <ListItemAction>
-                        <Button disabled={this.state.edit} onClick={this.handleOpenEdit}>edit</Button>  
+                        <Button onClick={this.handleOpenEdit}>edit</Button>  
                         <Dialog open={this.state.openEdit}>
                             <DialogTitle>Edit post</DialogTitle>
                             <DialogContent>
                                 <Textfield 
-                                    onChange={(e) => this. handleEName(e)}
-                                    //value = {this.props.message.text} 
-                                    label={this.props.message.text}  
+                                    onChange={this.updatePost}
+                                    value = {this.props.message.eName} 
+                                    label={this.props.message.eName}  
                                     style={{width: '400px'}} 
                                 />
                             </DialogContent>
                             <DialogActions>
-                                <Button type='button'onClick={this.editPost}>Agree</Button>
-                                <Button type='button' onClick={this.handleCloseEdit}>Disagree</Button>
+                                <Button type='button'onClick={(e) => this.editPost(e)}>Update</Button>
+                                <Button type='button' onClick={this.handleCloseEdit}>Canel</Button>
                             </DialogActions>
                         </Dialog>         
                     </ListItemAction>
 
                     <ListItemAction>
-                        <Button disabled={this.state.edit} onClick={this.handleOpenDialog}>delete</Button>
+                        <Button onClick={this.handleOpenDialog}>delete</Button>
                         <Dialog open={this.state.openDialog}>
                             <DialogTitle>Are you sure you want to delete this post?</DialogTitle>
                             <DialogContent>

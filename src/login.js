@@ -86,7 +86,7 @@ class Login extends React.Component {
             </ListItem>
             
             <ListItem>
-            <Button style={styles.buttonStyle} raised colored ripple onClick={(e) => this.signIn(e)}>
+            <Button raised colored ripple onClick={(e) => this.signIn(e)}>
                 SIGN IN
             </Button>
             </ListItem>

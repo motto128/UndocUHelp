@@ -167,11 +167,6 @@ class Join extends React.Component {
                 <ListItem>
                 <Button raised colored ripple onClick={(e) => {this.signUp(e)}}>NEXT</Button>
                 </ListItem>
-                
-
-                <ListItem>
-                <p>Next step <Link to="/joinDetail">Next Step</Link></p>
-                </ListItem>
 
                 <ListItem>
                 <p>Already have an account? <Link to="/login">Sign IN</Link></p>

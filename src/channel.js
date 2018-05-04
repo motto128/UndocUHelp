@@ -12,8 +12,9 @@ class Channel extends React.Component {
           <p>
             Be sure to the checkout the menu bar on the top left 
             hand corner of the screen to switch throught differnt 
-            chat channels and you also have to option to create a 
-            a new channel as well to privately talk to your friends!
+            fields of area you would like to post your information information
+            You also have to option to post a 
+            a new event and updates for anyone to see and check out!
           </p>
         </div>
       </div>

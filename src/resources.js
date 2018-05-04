@@ -25,7 +25,10 @@ class Resources extends React.Component {
             newState.push({
               id: item,
               title: items[item].eName,
-              descr: items[item].eDescr
+              descr: items[item].eDescr,
+              loc: items[item].eLoc,
+              date: items[item].eDate
+            
             });
           }
           this.setState({
@@ -39,7 +42,7 @@ class Resources extends React.Component {
 
         <div id='center'>
 
-            <h1 style={{textAlign: 'left',color: 'grey'}}>Local Resources</h1>
+            <h1 style={{color: 'grey'}}>Local Resources</h1>
             <div id='center'>
                 <SelectField label={''} value={1}>
                     <Option value={1}>Washington</Option>
@@ -60,16 +63,18 @@ class Resources extends React.Component {
                                   
                 <div id='card'>
                     <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
-                        <CardTitle expand style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/12/34876206422_8ec16fdde4_h.jpg) center / cover #46B6AC'}}>
+                        <CardTitle expand style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2018/02/022.png) center / cover #46B6AC'}}>
                         {item.title}</CardTitle>
                         <CardText>
                             {item.descr}
                             <br/><br/>
                             Phone Number: (206)685-6301
                             <br/><br/>
-                            Email: undocu@uw.edu
+                            Email: test@uw.edu
                             <br/><br/>
-                            Street Address: 3931 Brooklyn Avenue NE Box 355650 Seattle, Washington 98105
+                            {item.loc}
+                            <br/><br/>
+                            Date: {item.date}
                         </CardText>
                         <CardActions border>
                             <Button colored href="http://depts.washington.edu/ecc/lwb/">View Page</Button>
