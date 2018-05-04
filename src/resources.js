@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 import { Card, CardActions, CardText, CardTitle, Button} from 'react-mdl';
 import {SelectField, Option, MenuItem} from 'react-mdl-extra';
 import firebase from 'firebase';
@@ -7,32 +8,80 @@ import "firebase/firestore";
 // var citiesRef = db.collection("Organization"); 
 
 class Resources extends React.Component {
+    
+    constructor(props){
+        super(props);
+
+        this.state = {
+            items: []
+        };
+    
+    }
+    componentDidMount() {
+        const itemsRef = firebase.database().ref('channel/event');
+        itemsRef.on('value', (snapshot) => {
+          let items = snapshot.val();
+          let newState = [];
+          for (let item in items) {
+            newState.push({
+              id: item,
+              title: items[item].eName,
+              descr: items[item].eDescr
+            });
+          }
+          this.setState({
+            items: newState
+          });
+        });
+      }
+
   render() {
     return (
-        <div>
+
+        <div className='center'>
+            <h2 style={{textAlign: 'center',color: '#4A4A4A'}}>Local Resources</h2>
+            <div style={styles.filterStyle}>
+                <SelectField label={''} value={1}>
+                    <Option value={1}>Washington</Option>
+                    <Option value={1}>Oregon</Option>
+                    <Option value={1}>California</Option>
+                
+                </SelectField>
+               
+                    
+                <SelectField label={''} value={1}>
+                    <Option value={1}>Seattle</Option>
+                    <Option value={1}>Tacoma</Option>
+                    <Option value={1}>Bellevue</Option>
             
-                <h1 style={{textAlign: 'left',color: 'grey'}}>Local Resources</h1>
-                <div id='center'>
-            <SelectField label={''} value={1}>
-                <Option value={1}>Washington</Option>
-                <Option value={1}>Oregon</Option>
-                <Option value={1}>California</Option>
-                
-              </SelectField>
-              
-              <SelectField label={''} value={1}>
-                <Option value={1}>Seattle</Option>
-                <Option value={1}>Tacoma</Option>
-                <Option value={1}>Bellevue</Option>
-                
-              </SelectField>
-              
-        </div>
-           
+                </SelectField>
+            
+            </div>
+            {this.state.items.map((item) => { return (
+                                  
+                <div id='card'>
+                    <Card shadow={0} style={styles.cardStyle}>
+                        <CardTitle expand style={{color: '#fff',height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/12/34876206422_8ec16fdde4_h.jpg) center / cover #46B6AC'}}>
+                        {item.title}</CardTitle>
+                        <CardText>
+                            {item.descr}
+                            <br/><br/>
+                            Phone Number: (206)685-6301
+                            <br/><br/>
+                            Email: undocu@uw.edu
+                            <br/><br/>
+                            Street Address: 3931 Brooklyn Avenue NE Box 355650 Seattle, Washington 98105
+                        </CardText>
+                        <CardActions border>
+                            <Button style={styles.buttonStyle} raised colored ripple href="http://depts.washington.edu/ecc/lwb/">View Page</Button>
+                        </CardActions>
+                    </Card>
+                </div>
+            )})}
                 
             
             <div id='card'>
-                <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
+                <Card shadow={0} style={styles.cardStyle}>
                     <CardTitle expand style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2017/12/34876206422_8ec16fdde4_h.jpg) center / cover #46B6AC'}}>
                     Leadership Without Borders</CardTitle>
                     <CardText>
@@ -47,13 +96,13 @@ class Resources extends React.Component {
                         Street Address: 3931 Brooklyn Avenue NE Box 355650 Seattle, Washington 98105
                     </CardText>
                     <CardActions border>
-                        <Button colored href="http://depts.washington.edu/ecc/lwb/">View Page</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="http://depts.washington.edu/ecc/lwb/">View Page</Button>
                     </CardActions>
                 </Card>
             </div>
         
             <div id='card'>
-                <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
+                <Card shadow={0} style={styles.cardStyle}>
                     <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2018/02/022.png) center / cover'}}>
                     Spring Quarter 2018 Undocu Ally Training</CardTitle>
                     <CardText>
@@ -70,12 +119,12 @@ class Resources extends React.Component {
                         Event Location: Samuel E. Kelly Ethnic Cultural Center - Unity Suite
                     </CardText>
                     <CardActions border>
-                        <Button colored href="https://docs.google.com/forms/d/e/1FAIpQLSeskYQB_NUA_buV8RfxjNK-fioKIoppfP31GKd32K05wBzJmA/viewform?c=0&w=1">Event Link</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="https://docs.google.com/forms/d/e/1FAIpQLSeskYQB_NUA_buV8RfxjNK-fioKIoppfP31GKd32K05wBzJmA/viewform?c=0&w=1">Event Link</Button>
                     </CardActions>
                 </Card>
             </div>
             <div id='card'>
-                <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
+                <Card shadow={0} style={styles.cardStyle}>
                     <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://www.washington.edu/omad/files/2017/09/OMAD-purple-only-banner.png) center / cover'}}>
                     UW, TheDream.US announce new scholarship partnership to benefit undocumented students</CardTitle>
                     <CardText>
@@ -89,14 +138,14 @@ class Resources extends React.Component {
                         
                     </CardText>
                     <CardActions border>
-                        <Button colored href="http://www.washington.edu/omad/2018/01/19/uw-thedream-us-announce-new-scholarship-partnership-to-benefit-undocumented-students/">Read More</Button>
-                        <Button colored href="http://www.thedream.us/scholarships/">Apply Here</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="http://www.washington.edu/omad/2018/01/19/uw-thedream-us-announce-new-scholarship-partnership-to-benefit-undocumented-students/">Read More</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="http://www.thedream.us/scholarships/">Apply Here</Button>
 
                     </CardActions>
                 </Card>
             </div>
             <div id='card'>
-                <Card shadow={0} style={{width: '700px', margin: 'auto'}}>
+                <Card shadow={0} style={styles.cardStyle}>
                     <CardTitle style={{color: '#fff', height: '176px', background: 'url(http://depts.washington.edu/ecc/lwb/wp-content/uploads/2016/07/lwb.png) center / cover'}}>
                     UW to Participate in National First-Generation College Celebration on November 8</CardTitle>
                     <CardText>
@@ -112,7 +161,7 @@ class Resources extends React.Component {
                         #celebratefirstgen
                     </CardText>
                     <CardActions border>
-                        <Button colored href="http://www.washington.edu/omad/2017/11/05/first-generation-college-celebration/">Read More</Button>
+                        <Button style={styles.buttonStyle} raised colored ripple href="http://www.washington.edu/omad/2017/11/05/first-generation-college-celebration/">Read More</Button>
                     </CardActions>
                 </Card>
             </div>
@@ -121,5 +170,19 @@ class Resources extends React.Component {
   }
 }
 
+const styles = {
+    buttonStyle:{
+        backgroundColor: "#2196F3",
+        marginRight: "15px",
+        marginLeft: "30px"
+    },cardStyle:{
+        width: "90%", 
+        margin: "auto", 
+        
+    },filterStyle:{
+        margin: "auto",
+        width: "90%"
+    }
+  }
 
 export default Resources;

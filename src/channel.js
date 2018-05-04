@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link, hashHistory } from 'react-router';
+import firebase from 'firebase';
 
 class Channel extends React.Component {
   render() {
-    return ( 
-      <div className='welcome'id='center'>
+    return (
+      
+      <div className='welcome'id='center'>    
         <h1>Welcome to UndocUHelp Portal</h1>
         <div>
           <p>
@@ -13,7 +16,8 @@ class Channel extends React.Component {
             a new channel as well to privately talk to your friends!
           </p>
         </div>
-      </div>     
+      </div>
+    
     );
   }
 }

@@ -1,18 +1,31 @@
-
+/* .card{
+    
+    width: 1200px;
+    margin: auto;
+    padding-top: 10px
+} */
 
 #card {
-    margin-top: 50px;
-    margin-bottom: 70px;
+    margin-top: 20px;
+}
+/* added this */
+.Header{
+    background-color: #2196F3;
+}
+.signInText{
+    color: #4A4A4A;
 }
 
-#sections{
-    color: blue
-}
 
 #center {
     margin: auto;
-    width: 25%;
-    padding: 10px;
+    width: 50%;
+   
+    
+}
+.center{
+    margin: auto;
+    width: 100%;
 }
 
 

@@ -1,37 +1,75 @@
-import React from 'react';
+import React  from 'react';
 //import Time from 'react-time';
 import { Link, hashHistory } from 'react-router';
 import { Textfield, Button, List, ListItem, ListItemContent, ListItemAction, Dialog, DialogContent, DialogTitle, DialogActions} from 'react-mdl';
 import firebase from 'firebase';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class ChannelBox extends React.Component {
     
     constructor(props) {
         super(props);
         this.state = {
-            post:'',
+                eventName:'',
+                eventDate: moment(),
+                eventLoc:'',
+                eventLink:'',
+                eventDescr:''
+                
+            
         };
+        this.handleEName = this.handleEName.bind(this);
+    	this.handleEDate = this.handleEDate.bind(this);
+        this.handleELoc = this.handleELoc.bind(this);
+    	this.handleELink = this.handleELink.bind(this);
+        this.handleEDescr = this.handleEDescr.bind(this);
     }
     //when the text in the form changes
-    updatePost(event) {
-        this.setState({post: event.target.value});
+    handleEName(e) {
+        this.setState({eventName: e.target.value});
+    }
+    handleEDate(e) {
+        this.setState({eventDate: e});
+    }
+    handleELoc(e) {
+        this.setState({eventLoc: e.target.value});
+    }
+    handleELink(e) {
+        this.setState({eventLink: e.target.value});
+    }
+    handleEDescr(e) {
+        this.setState({eventDescr: e.target.value});
     }
     
     //post a new message to the database
-    submitPost(event) {
-        event.preventDefault(); //don't submit
+    submitPost(e) {
+        e.preventDefault(); //don't submit
         /* Add a new Channel to the database */
         var channelName = this.props.params.channelId;
-        //this.setState({name: channelName});
+        console.log(this.props.params.channelId);
+        var d = this.state.eventDate.toString();
         var postRef = firebase.database().ref('channel/'+channelName); //the channel in the JOITC
         var newPost = {
-            text: this.state.post,
+            eName: this.state.eventName,
+            eDate: d,
+            eLoc: this.state.eventLoc,
+            eLink: this.state.eventLink,
+            eDescr: this.state.eventDescr,
             userId: firebase.auth().currentUser.uid, //to look up channel info
             time: firebase.database.ServerValue.TIMESTAMP //MAGIC
         };
         postRef.push(newPost); //upload
         
-        this.setState({post:''}); //empty out post (controlled input)
+        this.setState({
+            eventName:'',
+            eventDate: '',
+            eventLoc:'',
+            eventLink:'',
+            eventDescr:''
+            
+         }); //empty out post (controlled input)
     }
 
     editPost(event) {
@@ -46,19 +84,105 @@ class ChannelBox extends React.Component {
         //console.log(channelName);
   
         return(
-            <div className='channelBox'>
-                <h1>{this.props.params.channelId}</h1>
-                <div className='channelPost'>
-                    <Textfield 
-                        onChange={(e) => this.updatePost(e)}
-                        value = {this.state.post} 
-                        label="post a message..." 
-                        style={{width: '400px'}} 
-                    />
-                    <Button primary onClick={(e) => this.submitPost(e)}>Post</Button>
+                <div className='channelBox' id = 'center' >
+                    <h1>Post New Event</h1>
+                    
+                    <div >
+                    
+                        <List>
+                            <p>Choose date and time of event:</p>
+                            <ListItem>
+                            
+                            <DatePicker 
+                            inline selected={this.state.eventDate} 
+                            onChange={(e) => this.handleEDate(e)}
+                            showTimeSelect
+                            
+                            />
+                            </ListItem>
+                            
+                           
+                            <ListItem>
+
+                            <Textfield 
+                            onChange={(e) => this.handleEName(e)}
+                            value = {this.state.eventName} 
+                            label="Name of Event"
+                            floatingLabel 
+                            style={{width: '400px'}} 
+                            />
+                            </ListItem>
+                        
+                        
+                            <ListItem>
+                            <Textfield
+                                onChange={(e) => this.handleELoc(e)}
+                                value={this.state.eventLoc}
+                                label="Location of Event"
+                                floatingLabel
+                                style={{width: '400px'}}
+                            />
+                            </ListItem>
+
+                            <ListItem>
+                            <Textfield
+                                onChange={(e) => this.handleELink(e)}
+                                value={this.state.eventLink}
+                                label="Link of Event"
+                                floatingLabel
+                                style={{width: '400px'}}
+                            />
+                            </ListItem>
+
+                            <ListItem>
+                            <Textfield
+                                onChange={(e) => this.handleEDescr(e)}
+                                value={this.state.eventDescr}
+                                label="Description of Event"
+                                floatingLabel
+                                rows={3}
+                                style={{width: '400px'}}
+                            />
+                            </ListItem>
+                            
+                            <ListItem>
+                            <Button raised colored onClick={(e) => this.submitPost(e)}>Post</Button>
+                            </ListItem>
+                        </List>
+                        
+                        
+                            
+                            <ListItem>
+                             {/*<ListItemContent>
+                            <DatePicker
+                                inline
+                                selected={this.state.eventTime}
+                                onChange={(e) => this.handleETime(e)}
+                                showTimeSelect
+                                showTimeSelectOnly
+                                
+                                
+                                timeCaption="Start"                             
+                            />
+                            </ListItemContent>
+                           <ListItemContent>
+                            <DatePicker
+                                inline
+                                selected={this.state.eventTime}
+                                onChange={(e) => this.handleETime(e)}
+                                showTimeSelect
+                                showTimeSelectOnly
+                                
+                                dateFormat="LT"
+                                timeCaption="End"                             
+                            />
+                            </ListItemContent>*/}
+                            </ListItem>
+                        
+                        
+                    </div>
+                    {chanName} 
                 </div>
-                {chanName} 
-            </div>
         );
     }
 }
@@ -177,7 +301,7 @@ class PostItem extends React.Component {
     }
     //changes the text in post 
     updatePost(e) {
-        this.setState({post: event.target.value});
+        this.setState({post: e.target.value});
     }
 
     render() {
@@ -195,7 +319,7 @@ class PostItem extends React.Component {
                             <DialogTitle>Edit post</DialogTitle>
                             <DialogContent>
                                 <Textfield 
-                                    onChange={(e) => this.updatePost(e)}
+                                    onChange={(e) => this. handleEName(e)}
                                     //value = {this.props.message.text} 
                                     label={this.props.message.text}  
                                     style={{width: '400px'}} 
