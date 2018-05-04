@@ -19,13 +19,9 @@ import Home from './home';
 import Channel from './channel';
 import ChannelBox from './channelbox';
 import Navbar from './navbar';
-<<<<<<< HEAD
-import MyEvents from './myEvents';
 
-=======
 
 import JoinDetail from './joinDetail';
->>>>>>> 2e303db53ce7d59aba5ed38f7b17467321912946
 
 
 var config = {
@@ -51,14 +47,8 @@ ReactDOM.render(
       <Route path="/resources" component={Resources} />
       <Route path="/events" component={Events} />
       <Route path="/channels" component={Channel} />
-<<<<<<< HEAD
-      <Route path="/channel/:channelId" component={ChannelBox} />
-      <Route path="myEvents" component={MyEvents} />  
-
-=======
       <Route path="/channel/:channelId" component={ChannelBox} />  
       <Route path="/join-step2" component={JoinDetail} />
->>>>>>> 2e303db53ce7d59aba5ed38f7b17467321912946
            
     </Route>
   </Router>
