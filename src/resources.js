@@ -118,7 +118,7 @@ class Resources extends React.Component {
                         The Leadership Without Borders Center (LWB), founded on 2014 by staff at Kelly Ethnic Cultural Center, 
                         is dedicated to work with our campus and at large community to build a comprehensive pathway for undocumented 
                         students’ access and success at our university and beyond. As part of this work, LWB established the Undocu Ally 
-                        Training & Education program to provide staff and faculty at the UW-Seattle campus with resources, information, and 
+                        Training and Education program to provide staff and faculty at the UW-Seattle campus with resources, information, and 
                         guidance on how to be an ally to undocumented students.
                         <br/><br/>
                         Event Date: 04/13/18
@@ -159,7 +159,7 @@ class Resources extends React.Component {
                     UW to Participate in National First-Generation College Celebration on November 8</CardTitle>
                     <CardText>
                     On November 8, the University of Washington joins the Council for Opportunity in Education, 
-                    NASPA’s Center for First-Generation Student Success, the American Association of Colleges & 
+                    NASPA’s Center for First-Generation Student Success, the American Association of Colleges and 
                     Universities and higher education institutions across the country in recognizing the National 
                     First-Generation College Celebration.
                     <br/><br/>

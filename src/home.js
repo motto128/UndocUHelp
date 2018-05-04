@@ -52,7 +52,7 @@ class Home extends React.Component {
               <div id='card'>
                   <Card shadow={0} style={styles.cardStyle} >
                   {/* style={{width: '1200px', margin: 'auto', paddingTop: '10px'}} */} 
-                      <CardTitle> Users & Needs </CardTitle>
+                      <CardTitle> Users and Needs </CardTitle>
                       <CardText style={{fontWeight: '400'}}>
                       Undocumented students face many struggles that affect their hopes of becoming 
                       college students and succeeding in college. Throughout that pursue of higher 
@@ -60,8 +60,8 @@ class Home extends React.Component {
                       <h6> Guidance </h6>
                       <l>
                         <li> Legal advice </li>
-                        <li> Academic advising & tutoring </li>
-                        <li> Scholarships & tuition </li>
+                        <li> Academic advising and tutoring </li>
+                        <li> Scholarships and tuition </li>
                         <li> Career opportunities </li>
 
                       </l>
